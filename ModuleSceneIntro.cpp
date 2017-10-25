@@ -20,6 +20,9 @@ bool ModuleSceneIntro::Start()
 	// experiment with different camera placements, then use LookAt()
 	// to make it look at the center
 
+	//App->camera->Position.x++;
+	App->camera->Position.y++;
+
 	return ret;
 }
 
@@ -37,6 +40,10 @@ update_status ModuleSceneIntro::Update()
 	// TODO 1: Create a Plane primitive. This uses the plane formula
 	// so you have to express the normal of the plane to create 
 	// a plane centered around 0,0. Make that it draw the axis for reference
+
+	Plane p = Plane(0.0f, 1.0f, 0.0f, 0.0f);
+	p.axis = true;
+	p.Render();
 
 	// TODO 6: Draw a sphere of 0.5f radius around the center
 	// Draw somewhere else a cube and a cylinder in wireframe
